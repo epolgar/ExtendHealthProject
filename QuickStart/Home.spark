@@ -1,0 +1,8 @@
+<viewdata model="QuickStart.HomeModel" />
+
+<content:main>
+
+	<h1>This is the place to add your To Do Tasks</h1>
+	<p>!{Model.Message}</p>
+	
+</content:main>
