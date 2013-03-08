@@ -1,8 +1,27 @@
-<viewdata model="QuickStart.HomeModel" />
-
+<use namespace="System.Linq"/>
+<use namespace="QuickStart.Model"/>
+<viewdata model="QuickStart.Model.TaskListModel" />
 <content:main>
 
-	<h1>This is the place to add your To Do Tasks</h1>
-	<p>!{Model.Message}</p>
-	
+  <h2>Welcome to the place to add and track your TODO tasks</h2>
+  <br/>
+  <p> 
+  
+    <form id="TaskListModelForm" action="${this.Urls.UrlFor(new QuickStart.Model.CreateTaskInputModel())}" class="form-stacked" method="post">
+      <fieldset>
+        <legend>Tasks</legend>
+        <div class="inputRow">
+          <label for="ItemTask">Specify your task</label>
+          <div class="input">
+              <input type ="text" class="text" id="ItemTask1" name ="ItemTask" />
+            <button class="btn">Enter</button>
+          </div>         
+        </div>
+      </fieldset>
+    </form>
+    
+
+      
+  </p>
+
 </content:main>

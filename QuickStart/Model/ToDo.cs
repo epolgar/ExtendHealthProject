@@ -5,72 +5,47 @@ using System.Web;
 
 namespace QuickStart.Model
 {
-    enum PriorityLevel
+    public enum PriorityLevel
     {
-        Low = 0, 
+        Low = 0,
         Important,
         Critical
     }
 
     public class ToDo
     {
-        class ToDo
+        public int ItemNumber
         {
-            private string mToDoItem;
-            private bool mToDoItemDone = false;
-            private DateTime mDateOfCompletion;
-            private PriorityLevel mPriority;
+            get; set;            
+        }
 
-            public string ToDoItem
-            {
-                get
-                {
-                    return mToDoItem;
-                }
-                set
-                {
-                    mToDoItem = value;
-                }
-            }
+        public string ToDoItem
+        {
+            get; set;
+        }
 
-            public bool IsCompleted
-            {
-                get
-                {
-                    return mToDoItemDone;
-                }
-                set
-                {
-                    mToDoItemDone = value;
-                }
-            }
+        protected bool IsCompleted
+        {
+            get; set;            
+        }
 
-            public DateTime DateOfCompletion
-            {
-                get
-                {
-                    return mDateOfCompletion;
-                }
-                set
-                {
-                    mDateOfCompletion = value;
-                }
-            }
+        protected DateTime DateOfCompletion
+        {
+            get; set;
+        }
 
-            /// <summary>
-            /// Priority is a prioritylist value that can be used as int if casted
-            /// </summary>
-            public PriorityLevel Priority
-            {
-                get
-                {
-                    return mPriority;
-                }
-                set
-                {    
-                    mPriority = value;
-                }
-            }
+        protected PriorityLevel Priority
+        {
+            get; set;
+        }
+
+        public ToDo(int itemNum, string itemTask)
+        {
+            ItemNumber = itemNum;
+            ToDoItem = itemTask;
+            IsCompleted = false;
+            DateOfCompletion = DateTime.Now;
+            Priority = PriorityLevel.Low;
         }
     }
 }

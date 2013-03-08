@@ -1,0 +1,29 @@
+<use namespace="System.Linq"/>
+<use namespace="QuickStart.Model"/>
+<viewdata model="QuickStart.Model.CreateTaskInputModel" />
+<content:main>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Task Number</th>
+        <th>Task Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <if condition="Model.Tasks.Count > 0">
+        <tr each="var TODO in Model.Tasks">
+          <td>${TODO.ItemNumber}</td>
+          <td>${TODO.ToDoItem}</td>
+        </tr>
+      </if>
+      <else>
+        <tr>
+          <td colspan="3">
+            <p>All Finished!!</p>
+          </td>
+        </tr>
+      </else>
+    </tbody>
+  </table>
+  <br/>
+</content:main>

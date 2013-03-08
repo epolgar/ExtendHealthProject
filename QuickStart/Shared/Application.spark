@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"   />
         <Asset src="twitterbootstrap"/>
-        <Asset src="core.css" />
+        <Asset src="Content/styles/corefubulinks-master.css" />
         <use content="head" />
         <Styles />
     </head>
@@ -11,7 +11,7 @@
         <div id="top-menu" class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="#">Quick Start App</a>
+                    <a class="brand" href="#">The New and Improved TODO Center (for all your tasks needs)</a>
 
                     <use content="navigation" />
                 </div>

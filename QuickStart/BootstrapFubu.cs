@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Web.Routing;
 using Bottles;
 using FubuMVC.Core;
@@ -6,6 +8,9 @@ using StructureMap.Configuration.DSL;
 
 namespace QuickStart
 {
+           
+
+
     // Using a separate class for bootstrapping makes it much easier to reuse your application 
     // in testing scenarios with either SelfHost or OWIN/Katana hosting
     public class MyApplication : IApplicationSource
@@ -15,6 +20,8 @@ namespace QuickStart
             // This is bootstrapping an application with all default FubuMVC conventions and
             // policies pulling actions from only this assembly for classes suffixed with
             // "Endpoint" or "Endpoints"
+
+            
             return FubuApplication.DefaultPolicies().StructureMap<MyStructureMapRegistry>();
 
 
@@ -32,6 +39,7 @@ namespace QuickStart
     {
         public MyStructureMapRegistry()
         {
+            
             // StructureMap registration here
         }
     }
@@ -41,6 +49,7 @@ namespace QuickStart
         public MyFubuMvcPolicies()
         {
             // This is a DSL to change or add new conventions, policies, or application settings
+            
         }
     }
 }

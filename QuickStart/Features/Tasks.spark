@@ -1,0 +1,27 @@
+<use namespace="System.Linq"/>
+<use namespace="QuickStart.Features"/>
+<viewdata model="QuickStart.Features.DashboardViewModel" />
+<content:main>
+
+  <h2>Welcome to the place to add and track your TODO tasks</h2>
+  <br/>
+  <p>
+
+    <form id="DashboardViewModelForm" action="${this.Urls.UrlFor(new QuickStart.Features.DashboardViewModel())}" class="form-stacked" method="post">
+      <fieldset>
+        <legend>Tasks</legend>
+        <div class="inputRow">
+          <label for="ItemTask">Specify your task</label>
+          <div class="input">
+            <input type ="text" class="text" id="ItemTask1" name ="ItemTask" />
+            <button class="btn">Enter</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+
+
+  </p>
+
+</content:main>
