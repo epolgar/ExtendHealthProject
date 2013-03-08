@@ -2,6 +2,7 @@ using System.Collections;
 using QuickStart.Home;
 using QuickStart.Model;
 using System.Collections.Generic;
+using QuickStart.Handlers;
 
 namespace QuickStart
 {
@@ -57,14 +58,19 @@ namespace QuickStart
 
             // return "Get only : /start";
         }
-
+       
         // Fubu will use HomeEndpoint.Index as the default "home" route
         public TaskListModel Index()
 		{
             _themodel = new TaskListModel();
             taskModelList.AddTaskListModel(_themodel);
             return _themodel;
-		}        
+		} 
+        /*
+        public DashboardViewModel Index()
+		{
+            return new DashboardViewModel();
+		} */
         
 	}
 }

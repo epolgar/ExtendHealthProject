@@ -50,12 +50,12 @@ namespace QuickStart.Model
                 {
                     if (item.ItemNumber.Equals(theTask.ItemNumber))
                     {
-                        item.ToDoItem = theTask.ToDoItem;
+                        item.ItemTask = theTask.ItemTask;
                         return item;
                     }
                 }
 
-                return new ToDo(theTask.ItemNumber, theTask.ToDoItem);
+                return new ToDo(theTask.ItemNumber, theTask.ItemTask);
             }        
     }
 }

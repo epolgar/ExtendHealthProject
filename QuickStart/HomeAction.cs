@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using QuickStart.Features;
+using QuickStart.Handlers;
 using FubuMVC.Core.Ajax;
 using QuickStart.Model;
 using QuickStart.Repositories;
@@ -8,9 +8,17 @@ namespace QuickStart.Home
 {  
 
     public class HomeAction
-    {
+    {     
+        /*   
+        public DashboardViewModel Get()
+        {
+            DashboardViewModel theModel = new DashboardViewModel();
+            
+            return theModel;
+        }
+        */
         private static TaskViewModel theViewModel = new TaskViewModel();
-
+        
         public TaskListModel Get()
         {
             TaskListModel theModel = new TaskListModel();

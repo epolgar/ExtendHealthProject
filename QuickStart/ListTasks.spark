@@ -13,7 +13,7 @@
       <if condition="Model.Tasks.Count > 0">
         <tr each="var TODO in Model.Tasks">
           <td>${TODO.ItemNumber}</td>
-          <td>${TODO.ToDoItem}</td>
+          <td>${TODO.ItemTask}</td>
         </tr>
       </if>
       <else>

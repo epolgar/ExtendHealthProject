@@ -1,8 +1,8 @@
 ﻿using System;
 using FubuMVC.Core;
-using QuickStart.Features;
-using QuickStart.Home;
+using QuickStart.Handlers;
 using QuickStart.Model;
+using QuickStart.Home;
 using StructureMap;
 
 namespace QuickStart
@@ -27,10 +27,12 @@ namespace QuickStart
 
             });
 
+            //Routes.HomeIs<DashboardViewModel>().ConstrainToHttpMethod(x => x.Method.Name.Equals("Get", StringComparison.InvariantCultureIgnoreCase), "GET");
+
+            //Routes.HomeIs<DashboardViewModel>().ConstrainToHttpMethod(x => x.Method.Name.Equals("Post", StringComparison.InvariantCultureIgnoreCase), "POST");
             Routes.HomeIs<TaskListModel>().ConstrainToHttpMethod(x => x.Method.Name.Equals("Get", StringComparison.InvariantCultureIgnoreCase), "GET");
 
             Routes.HomeIs<TaskListModel>().ConstrainToHttpMethod(x => x.Method.Name.Equals("Post", StringComparison.InvariantCultureIgnoreCase), "POST");
-            
             
             // can't access a lot of the different method calls that I should be able to access from here for some reason
             //Output.ToJson.WhenCallMatches(call => call.OutputType().Name.StartsWith("Json"));        

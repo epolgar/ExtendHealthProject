@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Objects;
+using System.Data.Objects.DataClasses;
+using System.Data.EntityClient;
+using System.ComponentModel.DataAnnotations;
 
 namespace QuickStart.Model
 {
@@ -14,38 +18,40 @@ namespace QuickStart.Model
 
     public class ToDo
     {
+        [Key]
+        public int Id { get; set; }
+
         public int ItemNumber
         {
             get; set;            
         }
 
-        public string ToDoItem
+        [Required]
+        public string ItemTask
         {
             get; set;
-        }
+        }       
 
-        protected bool IsCompleted
+        public QuickStart.Model.ToDo ToDomainToDo()
         {
-            get; set;            
+            return new ToDo
+            {
+                ItemNumber = this.ItemNumber,
+                ItemTask = this.ItemTask
+            };
+            
         }
 
-        protected DateTime DateOfCompletion
+        public ToDo()
         {
-            get; set;
+
         }
 
-        protected PriorityLevel Priority
-        {
-            get; set;
-        }
-
-        public ToDo(int itemNum, string itemTask)
+        public ToDo(int itemNum, string itemTask) 
         {
             ItemNumber = itemNum;
-            ToDoItem = itemTask;
-            IsCompleted = false;
-            DateOfCompletion = DateTime.Now;
-            Priority = PriorityLevel.Low;
+            ItemTask = itemTask;
         }
+
     }
 }

@@ -1,0 +1,43 @@
+FubuMVC.Diagnostics.Runtime.Tracing.UnhandledFubuException was unhandled by user code
+  HResult=-2146233088
+  Message=Behavior failed
+  Source=FubuMVC.Diagnostics
+  StackTrace:
+       at FubuMVC.Diagnostics.Runtime.Tracing.BehaviorTracer.invoke(Action action) in c:\BuildAgent\work\48f78f17652f6d5c\src\FubuMVC.Diagnostics\Runtime\Tracing\BehaviorTracer.cs:line 43
+       at FubuMVC.Core.Behaviors.WrappingBehavior.Invoke() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\WrappingBehavior.cs:line 13
+       at FubuMVC.Core.Behaviors.WrappingBehavior.<Invoke>b__0() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\WrappingBehavior.cs:line 13
+       at FubuMVC.Diagnostics.Runtime.Tracing.DiagnosticBehavior.invoke(Action action) in c:\BuildAgent\work\48f78f17652f6d5c\src\FubuMVC.Diagnostics\Runtime\Tracing\DiagnosticBehavior.cs:line 34
+       at FubuMVC.Core.Behaviors.WrappingBehavior.Invoke() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\WrappingBehavior.cs:line 13
+       at FubuMVC.StructureMap.NestedStructureMapContainerBehavior.Invoke() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.StructureMap\NestedStructureMapContainerBehavior.cs:line 27
+       at FubuMVC.Core.Runtime.BehaviorInvoker.Invoke(IActionBehavior behavior) in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Runtime\BehaviorInvoker.cs:line 40
+       at FubuMVC.Core.Runtime.BehaviorInvoker.Invoke(ServiceArguments arguments, IDictionary`2 routeValues) in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Runtime\BehaviorInvoker.cs:line 33
+       at FubuMVC.Core.Runtime.Handlers.SessionLessFubuHttpHandler.ProcessRequest(HttpContext context) in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Runtime\Handlers\SessionLessFubuHttpHandler.cs:line 22
+       at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+       at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+  InnerException: System.Data.MappingException
+       HResult=-2146232032
+       Message=Schema specified is not valid. Errors: 
+Context.TaskEntities.msl(3,4) : error 2062: No mapping specified for instances of the EntitySet and AssociationSet in the EntityContainer TaskEntitiesContainer.
+       Source=System.Data.Entity
+       StackTrace:
+            at System.Data.Mapping.StorageMappingItemCollection.Init(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders, List`1 filePaths, Boolean throwOnError)
+            at System.Data.Mapping.StorageMappingItemCollection..ctor(EdmItemCollection edmCollection, StoreItemCollection storeCollection, IEnumerable`1 xmlReaders, List`1 filePaths)
+            at System.Data.Metadata.Edm.MetadataCache.StoreMetadataEntry.LoadStoreCollection(EdmItemCollection edmItemCollection, MetadataArtifactLoader loader)
+            at System.Data.Metadata.Edm.MetadataCache.StoreItemCollectionLoader.LoadItemCollection(StoreMetadataEntry entry)
+            at System.Data.Metadata.Edm.MetadataCache.LoadItemCollection[T](IItemCollectionLoader`1 itemCollectionLoader, T entry)
+            at System.Data.Metadata.Edm.MetadataCache.GetOrCreateStoreAndMappingItemCollections(String cacheKey, MetadataArtifactLoader loader, EdmItemCollection edmItemCollection, Object& entryToken)
+            at System.Data.EntityClient.EntityConnection.LoadStoreItemCollections(MetadataWorkspace workspace, DbConnection storeConnection, DbProviderFactory factory, DbConnectionOptions connectionOptions, EdmItemCollection edmItemCollection, MetadataArtifactLoader artifactLoader)
+            at System.Data.EntityClient.EntityConnection.GetMetadataWorkspace(Boolean initializeAllCollections)
+            at System.Data.EntityClient.EntityConnection.InitializeMetadata(DbConnection newConnection, DbConnection originalConnection, Boolean closeOriginalConnectionOnFailure)
+            at System.Data.EntityClient.EntityConnection.Open()
+            at System.Data.Objects.ObjectContext.EnsureConnection()
+            at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+            at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+            at QuickStart.Handlers.DashboardViewModel..ctor() in C:\Users\Eric\Documents\Visual Studio 2010\Projects\ExtendHealthProject\QuickStart\QuickStart\Handlers\GetHandler.cs:line 41
+            at QuickStart.HomeEndpoint.Index() in C:\Users\Eric\Documents\Visual Studio 2010\Projects\ExtendHealthProject\QuickStart\QuickStart\HomeEndpoint.cs:line 72
+            at lambda_method(Closure , HomeEndpoint )
+            at FubuMVC.Core.Behaviors.ZeroInOneOutActionInvoker`2.performInvoke() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\ZeroInOneOutActionInvoker.cs:line 22
+            at FubuMVC.Core.Behaviors.BasicBehavior.Invoke() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\BasicBehavior.cs:line 26
+            at FubuMVC.Core.Behaviors.WrappingBehavior.<Invoke>b__0() in c:\BuildAgent\work\6ff6894a9badaff7\src\FubuMVC.Core\Behaviors\WrappingBehavior.cs:line 13
+            at FubuMVC.Diagnostics.Runtime.Tracing.BehaviorTracer.invoke(Action action) in c:\BuildAgent\work\48f78f17652f6d5c\src\FubuMVC.Diagnostics\Runtime\Tracing\BehaviorTracer.cs:line 26
+       InnerException: 

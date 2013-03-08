@@ -1,5 +1,6 @@
 ﻿using QuickStart.Repositories;
 using StructureMap.Configuration.DSL;
+using QuickStart.Model;
 
 namespace QuickStart.Configuration.Bootstrapping
 {
@@ -13,7 +14,7 @@ namespace QuickStart.Configuration.Bootstrapping
                          x.WithDefaultConventions();
                      });
 
-            For<IRepository>().Singleton().Use<QuickStart.Model.Repository>();
+            For<IRepository>().Singleton().Use<Repository>();
         }
     }
 }
